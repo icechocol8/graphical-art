@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Canvas Drawings</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Graphic 1: Rectangle -->
+  <canvas id="canvas1" width="200" height="200"></canvas>
+
+  <!-- Graphic 2: Circle -->
+  <canvas id="canvas2" width="200" height="200"></canvas>
+
+  <!-- Graphic 3: Line -->
+  <canvas id="canvas3" width="200" height="200"></canvas>
+
+  <!-- Graphic 4: Triangle -->
+  <canvas id="canvas4" width="200" height="200"></canvas>
+
+  <!-- Graphic 5: Quadratic Bezier Curve -->
+  <canvas id="canvas5" width="200" height="200"></canvas>
+
+  <!-- Graphic 6: Cubic Bezier Curve -->
+  <canvas id="canvas6" width="200" height="200"></canvas>
+
+  <!-- Graphic 7: Arc -->
+  <canvas id="canvas7" width="200" height="200"></canvas>
+
+  <!-- Graphic 8: Path -->
+  <canvas id="canvas8" width="200" height="200"></canvas>
+
+  <script>
+    // Graphic 1: Rectangle
+    var canvas1 = document.getElementById('canvas1');
+    var context1 = canvas1.getContext('2d');
+    context1.fillStyle = 'red';
+    context1.fillRect(10, 10, 180, 180);
+
+    // Graphic 2: Circle
+    var canvas2 = document.getElementById('canvas2');
+    var context2 = canvas2.getContext('2d');
+    context2.beginPath();
+    context2.arc(100, 100, 80, 0, 2 * Math.PI);
+    context2.fillStyle = 'green';
+    context2.fill();
+
+    // Graphic 3: Line
+    var canvas3 = document.getElementById('canvas3');
+    var context3 = canvas3.getContext('2d');
+    context3.beginPath();
+    context3.moveTo(10, 10);
+    context3.lineTo(190, 190);
+    context3.strokeStyle = 'blue';
+    context3.lineWidth = 5;
+    context3.stroke();
+
+    // Graphic 4: Triangle
+    var canvas4 = document.getElementById('canvas4');
+    var context4 = canvas4.getContext('2d');
+    context4.beginPath();
+    context4.moveTo(10, 10);
+    context4.lineTo(190, 10);
+    context4.lineTo(100, 190);
+    context4.closePath();
+    context4.fillStyle = 'orange';
+    context4.fill();
+
+    // Graphic 5: Quadratic Bezier Curve
+    var canvas5 = document.getElementById('canvas5');
+    var context5 = canvas5.getContext('2d');
+    context5.beginPath();
+    context5.moveTo(10, 10);
+    context5.quadraticCurveTo(100, 190, 190, 10);
+    context5.strokeStyle = 'purple';
+    context5.lineWidth = 5;
+    context5.stroke();
+
+    // Graphic 6: Cubic Bezier Curve
+    var canvas6 = document.getElementById('canvas6');
+    var context6 = canvas6.getContext('2d');
+    context6.beginPath();
+    context6.moveTo(10, 10);
+    context6.bezierCurveTo(60, 190, 140, 10, 190, 190);
+    context6.strokeStyle = 'brown';
+    context6.lineWidth = 5;
+    context6.stroke();
+
+    // Graphic 7: Arc
+    var canvas7 = document.getElementById('canvas7');
+    var context7 = canvas7.getContext('2d');
+    context7.beginPath();
+    context7.arc(100, 100, 80, 0, Math.PI, false);
+    context7.strokeStyle = 'pink';
+    context7.lineWidth = 5;
+    context7.stroke();
+
+    // Graphic 8: Path
+    var canvas8 = document.getElementById('canvas8');
+    var context8 = canvas8.getContext('2d');
+    context8.beginPath();
+    context8.moveTo(10, 10);
+    context8.lineTo(50, 190);
+    context8.lineTo(150, 50);
+    context8.lineTo(190, 190);
+    context8.closePath();
+    context8.fillStyle = 'cyan';
+    context8.fill();
+  </script>
+
+</body>
+</html>
